@@ -1,15 +1,17 @@
 import React from 'react'
 
 const Box = (props) => {
-  console.log(props);
-  
+  let result;
+  if(props.title === "Computer" && props.result !== "tie" && props.result !=="") {
+    result = props.result === "win" ? "lose" : "win";
+  } else {
+    result = props.result;
+  }
   return (
-    <div className='box'>
+    <div className={`box ${result}`}>
       <h1>{props.name}</h1>
-      {props.item && (
-        <img src={props.item.img} alt="..." />
-      )}
-      <h2>WIN</h2>
+      <img className='item-img' src={props.item && props.item.img} alt="..." />
+      <h2>{result}</h2>
     </div>
   )
 }

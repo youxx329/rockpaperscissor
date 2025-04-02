@@ -66,3 +66,23 @@ h1, h2 {
 .tie .item-img {
   background-color: #262df3; /* 파랑 */
 }
+
+@media (max-width: 768px) {
+  .box-wrap {
+    flex-direction: column;     /* ✅ 세로 방향으로 바꾸기 */
+    align-items: center;        /* 가운데 정렬 */
+    gap: 20px;
+  }
+
+  .box {
+    width: 90vw;                /* ✅ 화면 너비 거의 꽉 차게 */
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  .item-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
